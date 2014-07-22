@@ -1,0 +1,93 @@
+{
+    "appKeys": {
+        "icon": 1,
+        "temperature": 0,
+        "temppref": 2,
+        "theme": 3
+    },
+    "capabilities": [
+        "location",
+        "configurable"
+    ],
+    "companyName": "edwin",
+    "longName": "Palm - Bigclock",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/rsz_download.png",
+                "menuIcon": true,
+                "name": "IMAGE_MENU_ICON",
+                "type": "png"
+            },
+            {
+                "file": "images/cloudy_moon.png",
+                "name": "IMAGE_CLOUDY_MOON",
+                "type": "png"
+            },
+            {
+                "file": "images/cloudy.png",
+                "name": "IMAGE_CLOUDY",
+                "type": "png"
+            },
+            {
+                "file": "images/Fog.png",
+                "name": "IMAGE_FOG",
+                "type": "png"
+            },
+            {
+                "file": "images/light_rain.png",
+                "name": "IMAGE_LIGHT_RAIN",
+                "type": "png"
+            },
+            {
+                "file": "images/moon.png",
+                "name": "IMAGE_CLEAR_MOON",
+                "type": "png"
+            },
+            {
+                "file": "images/partially_sunny.png",
+                "name": "IMAGE_PARTIALLY_SUNNY",
+                "type": "png"
+            },
+            {
+                "file": "images/rain.png",
+                "name": "IMAGE_RAIN",
+                "type": "png"
+            },
+            {
+                "file": "images/snow.png",
+                "name": "IMAGE_SNOW",
+                "type": "png"
+            },
+            {
+                "file": "images/sunny.png",
+                "name": "IMAGE_SUNNY",
+                "type": "png"
+            },
+            {
+                "file": "images/thunderstorms.png",
+                "name": "IMAGE_THUNDER",
+                "type": "png"
+            },
+            {
+                "characterRegex": "[0-9, :]",
+                "file": "fonts/Roboto-Regular.ttf",
+                "name": "FONT_ROBOTO_REG_35",
+                "type": "font"
+            },
+            {
+                "file": "images/bigclock-base.png",
+                "name": "IMAGE_BASE",
+                "type": "png"
+            }
+        ]
+    },
+    "shortName": "Palm - Bigclock",
+    "uuid": "070a6bae-faa2-4587-a894-94e1127e464a",
+    "versionCode": 1,
+    "versionLabel": "1.0.2-rls",
+    "watchapp": {
+        "watchface": true
+    }
+}
