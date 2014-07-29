@@ -88,16 +88,36 @@ function locationError(err) {
 
 var locationOptions = { "timeout": 15000, "maximumAge": 60000 }; 
 
+var long_s = 0;
+var lat_s = 0;
+var fetchtype = 0;
+
+function weather_try_fetch(){
+	long_s = parseFloat(localStorage.getItem("long_s"));
+	lat_s = parseFloat(localStorage.getItem("lat_s"));
+	fetchtype = parseInt(localStorage.getItem("fetchtype"));
+	console.log("Got values: " + long_s + " and " + lat_s + " and " + fetchtype);
+	if(fetchtype === 1){
+		console.log("Fetching weather with specified coordinates: " + long_s + " and " + lat_s);
+		fetchWeather(lat_s, long_s);
+	}
+	else{
+		console.log("Specified coordinates is false...");
+		console.log("Fetching with GPS location.");
+		window.navigator.geolocation.watchPosition(locationSuccess, locationError, locationOptions);	
+	}
+}
+
 Pebble.addEventListener("ready",
                         function(e) {
                           console.log("connect!" + e.ready);
-                          window.navigator.geolocation.watchPosition(locationSuccess, locationError, locationOptions);
+                          weather_try_fetch();
                           console.log(e.type);
                         });
 
 Pebble.addEventListener("appmessage",
                         function(e) {
-                          window.navigator.geolocation.getCurrentPosition(locationSuccess, locationError, locationOptions);
+                          weather_try_fetch();
                           console.log(e.type);
                           console.log(e.payload.temperature);
                           console.log("message!");
@@ -121,6 +141,17 @@ Pebble.addEventListener("webviewclosed", function(e) {
 				console.log("Failed to send options to Pebble.\nError: " + e.error.message);
 			}
 		);
+		
+		if(values.fetchtype === 1){
+			localStorage.setItem("fetchtype", 1);
+			console.log("Fetch type is specific coordinates.");
+		}
+		else{
+			localStorage.setItem("fetchtype", 0);
+			console.log("Fetch type is NOT specific coordinates.");
+		}
+		localStorage.setItem("long_s", parseFloat(values.custlong));
+		localStorage.setItem("lat_s", parseFloat(values.custlat));
 	}
 });
 

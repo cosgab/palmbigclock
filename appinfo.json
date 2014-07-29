@@ -1,5 +1,7 @@
 {
     "appKeys": {
+        "custlat": 4,
+        "custlong": 5,
         "icon": 1,
         "temperature": 0,
         "temppref": 2,
@@ -86,7 +88,7 @@
     "shortName": "Palm - Bigclock",
     "uuid": "070a6bae-faa2-4587-a894-94e1127e464a",
     "versionCode": 1,
-    "versionLabel": "1.0.2-rls",
+    "versionLabel": "1.0.3-rls",
     "watchapp": {
         "watchface": true
     }
